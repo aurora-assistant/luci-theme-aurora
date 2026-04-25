@@ -117,12 +117,13 @@
 		{% if (node?.css): %}
 		<link rel="stylesheet" href="{{ resource }}/{{ node.css }}">
 		{% endif %}
-		<link rel="stylesheet" href="{{ media }}/fonts/aurora-custom-font.css?v={{ icon_cache_version }}">
 		{% if (css): %}
 		<style title="text/css">{{ css }}</style>
 		{% endif %}
 		{% if (length(tokens)): %}
 		<style>
+			{% if (tokens.font_sans_face): %}{{ tokens.font_sans_face }}{% endif %}
+			{% if (tokens.font_mono_face): %}{{ tokens.font_mono_face }}{% endif %}
 			:root {
 				{% for (let key in tokens): %}
 				{% if (index(key, 'light_') == 0 || index(key, 'struct_') == 0): %}
