@@ -117,6 +117,7 @@
 		{% if (node?.css): %}
 		<link rel="stylesheet" href="{{ resource }}/{{ node.css }}">
 		{% endif %}
+		<link rel="stylesheet" href="{{ media }}/fonts/aurora-custom-font.css?v={{ icon_cache_version }}">
 		{% if (css): %}
 		<style title="text/css">{{ css }}</style>
 		{% endif %}
